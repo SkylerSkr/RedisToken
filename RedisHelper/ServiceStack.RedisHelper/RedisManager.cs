@@ -35,6 +35,7 @@ namespace ServiceStack.RedisHelper
             var MaxReadPoolSize = System.Configuration.ConfigurationSettings.AppSettings["MaxReadPoolSize"];
             var DefaultDb = System.Configuration.ConfigurationSettings.AppSettings["DefaultDb"];
             var AutoStart = System.Configuration.ConfigurationSettings.AppSettings["AutoStart"];
+            RedisConfig.VerifyMasterConnections = false;//阿里云不关用不了
             prcm = new PooledRedisClientManager(ReadServerConStr, WriteServerConStr,
                              new RedisClientManagerConfig
                              {
